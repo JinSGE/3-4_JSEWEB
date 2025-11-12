@@ -1,35 +1,27 @@
 Role Name
 =========
-
-내가 만든 거유~
+이름
 
 Requirements
 ------------
-
-필요한거 있슈~~~
+요구사항
 
 Role Variables
 --------------
-
-닥치고 설치혀~~~
+변수
 
 Dependencies
 ------------
-
-독립혀라
+의존성
 
 Example Playbook
 ----------------
-
-예제 없다.
+예제
 
 License
 -------
-
-GNU 라이센스유~~~
+GNU 라이센스
 
 Author Information
 ------------------
-
-솔데스크 강사
-* 5.0 강사 백승찬
+작자

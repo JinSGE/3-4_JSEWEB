@@ -1,38 +1,39 @@
-Role Name
-=========
-
-A brief description of the role goes here.
+3-4_rollback-svc
+============================================
+이 역할에 대한 설명 작성.
+============================================
+이 역할은 웹 서비스 복구를 위한 롤백 작업을 수행.
+방화벽에서 웹 관련 포트를 차단하고,
+관련 서비스를 중지 및 비활성화하며,
+웹 관련 파일과 패키지를 제거하는 작업을 수행.
 
 Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+============================================
+이 역할은 Ansible 자체의 기본 기능을 사용하므로 별도의 사전 요구 사항은 없음.
+단, firewalld, systemd, dnf 모듈이 시스템에 필수 설치가 전제 조건.
 
 Role Variables
---------------
+============================================
+fw_svc = 방화벽에서 차단할 서비스 목록 (HTTP/HTTPS 등)
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+svcs   = 중지 및 비활성화할 서비스 목록 (httpd, firewalld 등)
+
+files  = 삭제할 웹 인덱스 파일 목록 (/var/www/html/index.html)
+
+pkgs   = 제거할 패키지 목록
 
 Dependencies
-------------
+============================================
+이 역할은 외부 역할이나 의존성 없이 단독으로 사용 가능.
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+firewalld, systemd, dnf 모듈을 사용.
 
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
+해당 모듈이 시스템에 설치되어 있어야 함.
+      
 License
--------
-
-BSD
+============================================
+BSD License
 
 Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+============================================
+진성은
